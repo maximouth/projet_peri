@@ -16,7 +16,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 
 RF24 radio (9,10);
 
-byte addresses[][6] = {"01234","23456","2Node","3Node","4Node","5Node"};
+byte addresses[][6] = {"0Node","1Node","2Node","3Node","4Node","5Node"};
 
 #define LOGO16_GLCD_HEIGHT 16 
 #define LOGO16_GLCD_WIDTH  16 
