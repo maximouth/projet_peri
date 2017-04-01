@@ -2,10 +2,7 @@
 
 import cgi 
 import sqlite3
-import plotly.plotly as py
-import plotly.graph_objs as go
 
-#plotly.tools.set_credentials_file(username='maximouth', api_key='mhxPshAzUwSAThBSdXpU')
 
 form = cgi.FieldStorage()
 
@@ -53,22 +50,10 @@ for row in rows:
     print ("<h4>")
     print ('{0} : {1} '.format(row[0], row[1]))
     print ("</h4>")
-    ids.append((row[0]))
-    valeur.append((row[1]))
+    ids.append(row[0])
+    valeur.append(row[1])
     
 conn.close()
 
-trace = go.Scatter(
-    x = ids,
-    y = valeur,
-    mode = 'lines+markers',
-    name = 'lines+markers'
-)
-
-data = [trace]
-
-image = "<img src=%s' %(py.plot(data, filename='test'))"
-
-print (image)
 
 print (fin)
