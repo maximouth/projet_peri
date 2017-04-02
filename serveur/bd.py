@@ -2,7 +2,7 @@
 
 import cgi 
 import sqlite3
-
+import matplotlib.pyplot as plt
 
 form = cgi.FieldStorage()
 
@@ -55,5 +55,11 @@ for row in rows:
     
 conn.close()
 
+plt.plot(ids, valeur)  # on utilise la fonction sinus de Numpy
+plt.ylabel('lumiere de la piece')
+plt.xlabel("Temps (s)")
+plt.savefig('plot',format='png')
+
+print ("<img src=\"/plot.png\" alt=\"plot\" >")
 
 print (fin)

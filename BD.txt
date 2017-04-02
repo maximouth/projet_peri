@@ -1,0 +1,17 @@
+CREATE TABLE photores (
+
+   id  INT PRIMARY KEY NOT NULL,
+   val INT NOT NULL
+
+ );
+
+
+Select *
+FROM photores
+Where id < n
+;
+
+
+Insert Into photores (id, val)
+Values (cpt, lu)
+;

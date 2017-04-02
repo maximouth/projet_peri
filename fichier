@@ -3,3 +3,70 @@ liens utile :
 base de donnÃ©e
 
 http://apprendre-python.com/page-database-data-base-donnees-query-sql-mysql-postgre-sqlite
+
+
+
+Oraganisation du projet :
+
+Arduino :
+---------
+
+-> lit la valeur de la photo resistance,
+                  -> l'affiche sur le oled
+		  -> l'envoie au raspberry
+
+Raspberry :
+-----------
+
+coté serveur :
+&&&&&&&&&&&&&&
+
+affiche une page avec :
+	-> logo
+	-> titre
+	-> commande qui demande les combiens dernière valeur on veut
+	   afficher sur un graph
+	-> un bouton pour envoyer la commande
+
+=> si bouton appuyé activation d'un CGI
+
+      	     -> regarder si la chaine est bien formée ou non ?
+      	     -> va chercher dans la base de donnée les n premières entrée
+	     -> crée un graph avec ? (dans le cours il avait expliqué un
+	        truc simle pour le faire)
+	     -> rajoute le graph dans la page
+
+
+coté base de donnée
+&&&&&&&&&&&&&&&&&&&
+
+petit programme qui tourne en boucle:
+      ecoute en continue du module nrf
+        quand valeur reçue par le module nrf :
+          -> la stocker dans la base de donnée
+
+ 
+Base de donnée
+--------------
+
+organisée de cette façon :
+
+Table photoresistance
++-------+----------+
+| index |   Valeur |
+|  1    |     85   |
+|  2    |    345   |
+|  3    |    894   |
+|  .    |    .     |
+|  .    |    .     |
+|  .    |    .     |     
++-------+----------+
+
+En deux semaines ca parait faisable
+
+Arduino        : (done)
+Rapsberry      :
+   serveur             : en partie fait
+   coté base de donnée : pas fait
+base de donnée : pas fait
+
