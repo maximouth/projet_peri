@@ -26,7 +26,7 @@ fin = """
 
 print(html)
 
-conn = sqlite3.connect('ma_base.db')
+conn = sqlite3.connect('../ma_base.db')
 
 cursor =conn.cursor()
 
@@ -39,15 +39,15 @@ CREATE TABLE IF NOT EXISTS photores (
 """)
 conn.commit()
 
-users = []
-users.append((0, 10))
-users.append((2, 42))
-users.append((3, 44))
-users.append((4, 9))
+# users = []
+# users.append((0, 10))
+# users.append((2, 42))
+# users.append((3, 44))
+# users.append((4, 9))
 
 
-cursor.executemany("""
-INSERT INTO photores(id, val) VALUES(?, ?)""", users)
+# cursor.executemany("""
+# INSERT INTO photores(id, val) VALUES(?, ?)""", users)
 
 conn.commit()
 

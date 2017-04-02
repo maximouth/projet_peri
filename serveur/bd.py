@@ -35,11 +35,11 @@ lu = form.getvalue("val")
 
 print("valeur du graph : " + lu)
 
-conn = sqlite3.connect('ma_base.db')
+conn = sqlite3.connect('../ma_base.db')
 
 cursor =conn.cursor()
 
-cursor.execute("Select * FROM photores Where id < 100" )
+cursor.execute("Select * FROM photores Where id < " + lu * 60 + " ) "
 
 rows = cursor.fetchall()
 
